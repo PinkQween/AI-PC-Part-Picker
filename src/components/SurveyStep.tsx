@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { UseCase, SurveyState, BudgetType } from '../types';
+import type { UseCase, SurveyState, BudgetType, StorageUnit } from '../types';
 
 interface SurveyStepProps {
   state: SurveyState;
@@ -8,7 +8,7 @@ interface SurveyStepProps {
 }
 
 export const SurveyStep: React.FC<SurveyStepProps> = ({ state, setState, onNext }) => {
-  const [step, setStep] = useState<'usecases' | 'storage' | 'budget' | 'budgettype' | 'features' | 'os'>('usecases');
+  const [step, setStep] = useState<'usecases' | 'storage' | 'budget' | 'budgettype' | 'features' | 'os' | 'graphics'>('usecases');
 
   const useCaseOptions: { value: UseCase; label: string; description: string }[] = [
     { value: 'coding', label: 'Coding/Development', description: 'Programming, web development, IDEs' },
@@ -40,6 +40,10 @@ export const SurveyStep: React.FC<SurveyStepProps> = ({ state, setState, onNext 
   const handleStorageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value ? parseInt(e.target.value, 10) : null;
     setState(prev => ({ ...prev, storageCapacity: value }));
+  };
+
+  const handleStorageUnitChange = (unit: StorageUnit) => {
+    setState(prev => ({ ...prev, storageUnit: unit }));
   };
 
   const canProceedUseCases = state.useCases.length > 0;
@@ -102,7 +106,16 @@ export const SurveyStep: React.FC<SurveyStepProps> = ({ state, setState, onNext 
                   placeholder="e.g., 512, 1000, 2000"
                   className="input-field"
                 />
-                <span className="unit">GB</span>
+                <select
+                  value={state.storageUnit}
+                  onChange={(e) => handleStorageUnitChange(e.target.value as StorageUnit)}
+                  className="unit-select"
+                >
+                  <option value="gb">GB</option>
+                  <option value="tb">TB</option>
+                  <option value="gib">GiB</option>
+                  <option value="tib">TiB</option>
+                </select>
               </div>
               <div className="quick-buttons">
                 {[
@@ -306,22 +319,6 @@ export const SurveyStep: React.FC<SurveyStepProps> = ({ state, setState, onNext 
                   </span>
                 </div>
               </label>
-
-              <label className="radio-label">
-                <input
-                  type="radio"
-                  name="os"
-                  checked={state.operatingSystem === 'macos'}
-                  onChange={() => setState(prev => ({ ...prev, operatingSystem: 'macos' }))}
-                  className="radio-input"
-                />
-                <div className="radio-content">
-                  <span className="radio-title">macOS</span>
-                  <span className="radio-desc">
-                    Apple hardware only, optimized for MacBooks
-                  </span>
-                </div>
-              </label>
             </div>
 
             <div className="button-group">
@@ -334,6 +331,63 @@ export const SurveyStep: React.FC<SurveyStepProps> = ({ state, setState, onNext 
               <button
                 className="btn btn-primary"
                 disabled={!state.operatingSystem}
+                onClick={() => setStep('graphics')}
+              >
+                Next: Graphics Environment
+              </button>
+            </div>
+          </div>
+        )}
+
+        {step === 'graphics' && (
+          <div className="survey-step">
+            <h2>What's your graphics environment?</h2>
+            <p className="subtitle">This affects GPU recommendations</p>
+
+            <div className="radio-group">
+              <label className="radio-label">
+                <input
+                  type="radio"
+                  name="graphics"
+                  checked={state.graphicsEnvironment === 'hyprland'}
+                  onChange={() => setState(prev => ({ ...prev, graphicsEnvironment: 'hyprland' }))}
+                  className="radio-input"
+                />
+                <div className="radio-content">
+                  <span className="radio-title">Hyprland (Wayland WM)</span>
+                  <span className="radio-desc">
+                    Using a graphical desktop environment - may benefit from dedicated GPU
+                  </span>
+                </div>
+              </label>
+
+              <label className="radio-label">
+                <input
+                  type="radio"
+                  name="graphics"
+                  checked={state.graphicsEnvironment === 'terminal'}
+                  onChange={() => setState(prev => ({ ...prev, graphicsEnvironment: 'terminal' }))}
+                  className="radio-input"
+                />
+                <div className="radio-content">
+                  <span className="radio-title">Terminal Only (CLI)</span>
+                  <span className="radio-desc">
+                    No graphical environment - integrated graphics usually sufficient
+                  </span>
+                </div>
+              </label>
+            </div>
+
+            <div className="button-group">
+              <button
+                className="btn btn-secondary"
+                onClick={() => setStep('os')}
+              >
+                Back
+              </button>
+              <button
+                className="btn btn-primary"
+                disabled={!state.graphicsEnvironment}
                 onClick={() => setStep('budgettype')}
               >
                 Next: Budget Type

@@ -16,11 +16,13 @@ const App: React.FC = () => {
     budget: null,
     budgetType: 'soft',
     storageCapacity: null,
+    storageUnit: 'gb',
     needsWireless: null,
     needsExpansionSlots: null,
     needsSoundCard: null,
     needsCaptureCard: null,
     operatingSystem: null,
+    graphicsEnvironment: null,
   });
 
   // Parse share URL on mount

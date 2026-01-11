@@ -8,18 +8,24 @@ export type UseCase =
 
 export type BudgetType = 'strict' | 'soft' | 'flexible';
 
-export type OperatingSystem = 'windows' | 'linux' | 'macos';
+export type OperatingSystem = 'windows' | 'linux';
+
+export type StorageUnit = 'gb' | 'tb' | 'gib' | 'tib';
+
+export type GraphicsEnvironment = 'hyprland' | 'terminal';
 
 export interface SurveyState {
   useCases: UseCase[];
   budget: number | null;
   budgetType: BudgetType;
   storageCapacity: number | null;
+  storageUnit: StorageUnit;
   needsWireless: boolean | null;
   needsExpansionSlots: boolean | null;
   needsSoundCard: boolean | null;
   needsCaptureCard: boolean | null;
   operatingSystem: OperatingSystem | null;
+  graphicsEnvironment: GraphicsEnvironment | null;
 }
 
 export interface PCPart {
