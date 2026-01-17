@@ -143,7 +143,7 @@ export const cpuDatabase: PCPart[] = [
   },
 ];
 
-// GPUs - 2026 Latest Components
+// GPUs - Budget to Premium (2026)
 export const gpuDatabase: PCPart[] = [
   {
     id: 'gpu-integrated',
@@ -153,6 +153,32 @@ export const gpuDatabase: PCPart[] = [
     specs: { memory: 0, power: 0 },
     scores: { coding: 4, gaming: 3, streaming: 2, vtuber: 3, multitab: 6, music: 3 },
   },
+  // Ultra Budget GPUs
+  {
+    id: 'gpu-gt-1030',
+    name: 'NVIDIA GeForce GT 1030',
+    category: 'gpu',
+    price: 79,
+    specs: { memory: 2, cuda_cores: 384, power: 30 },
+    scores: { coding: 2, gaming: 4, streaming: 3, vtuber: 3, multitab: 2, music: 3 },
+  },
+  {
+    id: 'gpu-rx-6400',
+    name: 'AMD Radeon RX 6400',
+    category: 'gpu',
+    price: 99,
+    specs: { memory: 4, stream_processors: 768, power: 53 },
+    scores: { coding: 2, gaming: 5, streaming: 4, vtuber: 4, multitab: 3, music: 3 },
+  },
+  {
+    id: 'gpu-rx-6500xt',
+    name: 'AMD Radeon RX 6500 XT',
+    category: 'gpu',
+    price: 119,
+    specs: { memory: 4, stream_processors: 1024, power: 107 },
+    scores: { coding: 2, gaming: 6, streaming: 5, vtuber: 5, multitab: 3, music: 4 },
+  },
+  // Budget GPUs
   {
     id: 'gpu-rtx-4050',
     name: 'NVIDIA RTX 4050',
@@ -162,12 +188,61 @@ export const gpuDatabase: PCPart[] = [
     scores: { coding: 2, gaming: 6, streaming: 5, vtuber: 6, multitab: 3, music: 4 },
   },
   {
+    id: 'gpu-rx-6600',
+    name: 'AMD Radeon RX 6600',
+    category: 'gpu',
+    price: 149,
+    specs: { memory: 8, stream_processors: 1792, power: 132 },
+    scores: { coding: 3, gaming: 7, streaming: 6, vtuber: 6, multitab: 3, music: 5 },
+  },
+  {
+    id: 'gpu-rtx-3050',
+    name: 'NVIDIA RTX 3050',
+    category: 'gpu',
+    price: 169,
+    specs: { memory: 8, cuda_cores: 2560, power: 130 },
+    scores: { coding: 3, gaming: 7, streaming: 6, vtuber: 7, multitab: 3, music: 5 },
+  },
+  {
+    id: 'gpu-rx-6650xt',
+    name: 'AMD Radeon RX 6650 XT',
+    category: 'gpu',
+    price: 179,
+    specs: { memory: 8, stream_processors: 2048, power: 180 },
+    scores: { coding: 3, gaming: 8, streaming: 7, vtuber: 7, multitab: 3, music: 5 },
+  },
+  // Mid-Range GPUs
+  {
     id: 'gpu-rtx-4060',
     name: 'NVIDIA RTX 4060',
     category: 'gpu',
     price: 199,
     specs: { memory: 8, cuda_cores: 3072, power: 70 },
     scores: { coding: 3, gaming: 8, streaming: 7, vtuber: 8, multitab: 4, music: 5 },
+  },
+  {
+    id: 'gpu-rx-7600',
+    name: 'AMD Radeon RX 7600',
+    category: 'gpu',
+    price: 219,
+    specs: { memory: 8, stream_processors: 2048, power: 165 },
+    scores: { coding: 3, gaming: 8, streaming: 7, vtuber: 7, multitab: 4, music: 6 },
+  },
+  {
+    id: 'gpu-rtx-4060ti',
+    name: 'NVIDIA RTX 4060 Ti',
+    category: 'gpu',
+    price: 289,
+    specs: { memory: 8, cuda_cores: 4352, power: 160 },
+    scores: { coding: 3, gaming: 9, streaming: 8, vtuber: 8, multitab: 4, music: 6 },
+  },
+  {
+    id: 'gpu-amd-7700xt',
+    name: 'AMD Radeon RX 7700 XT',
+    category: 'gpu',
+    price: 249,
+    specs: { memory: 12, stream_processors: 2560, power: 245 },
+    scores: { coding: 4, gaming: 9, streaming: 8, vtuber: 8, multitab: 5, music: 7 },
   },
   {
     id: 'gpu-rtx-5070',
@@ -178,11 +253,28 @@ export const gpuDatabase: PCPart[] = [
     scores: { coding: 4, gaming: 9, streaming: 9, vtuber: 9, multitab: 4, music: 7 },
   },
   {
+    id: 'gpu-amd-8700xt',
+    name: 'AMD Radeon RX 8700 XT',
+    category: 'gpu',
+    price: 349,
+    specs: { memory: 12, stream_processors: 2560, power: 210 },
+    scores: { coding: 3, gaming: 9, streaming: 8, vtuber: 9, multitab: 3, music: 6 },
+  },
+  // High-End GPUs
+  {
     id: 'gpu-rtx-5070ti',
     name: 'NVIDIA RTX 5070 Ti',
     category: 'gpu',
     price: 499,
     specs: { memory: 16, cuda_cores: 8960, power: 285 },
+    scores: { coding: 4, gaming: 10, streaming: 10, vtuber: 10, multitab: 4, music: 7 },
+  },
+  {
+    id: 'gpu-amd-8900xtx',
+    name: 'AMD Radeon RX 8900 XTX',
+    category: 'gpu',
+    price: 649,
+    specs: { memory: 16, stream_processors: 5120, power: 420 },
     scores: { coding: 4, gaming: 10, streaming: 10, vtuber: 10, multitab: 4, music: 7 },
   },
   {
@@ -201,34 +293,125 @@ export const gpuDatabase: PCPart[] = [
     specs: { memory: 32, cuda_cores: 32256, power: 575 },
     scores: { coding: 5, gaming: 10, streaming: 10, vtuber: 10, multitab: 5, music: 8 },
   },
-  {
-    id: 'gpu-amd-7700xt',
-    name: 'AMD Radeon RX 7700 XT',
-    category: 'gpu',
-    price: 249,
-    specs: { memory: 12, stream_processors: 2560, power: 245 },
-    scores: { coding: 4, gaming: 9, streaming: 8, vtuber: 8, multitab: 5, music: 7 },
-  },
-  {
-    id: 'gpu-amd-8700xt',
-    name: 'AMD Radeon RX 8700 XT',
-    category: 'gpu',
-    price: 349,
-    specs: { memory: 12, stream_processors: 2560, power: 210 },
-    scores: { coding: 3, gaming: 9, streaming: 8, vtuber: 9, multitab: 3, music: 6 },
-  },
-  {
-    id: 'gpu-amd-8900xtx',
-    name: 'AMD Radeon RX 8900 XTX',
-    category: 'gpu',
-    price: 649,
-    specs: { memory: 16, stream_processors: 5120, power: 420 },
-    scores: { coding: 4, gaming: 10, streaming: 10, vtuber: 10, multitab: 4, music: 7 },
-  },
 ];
 
-// RAM - 2026 Latest Components (DDR5 Focus)
+// RAM - All Types (DDR3, DDR4, DDR5) with Budget to High-End
 export const ramDatabase: PCPart[] = [
+  // DDR3 - Ultra Budget Options
+  {
+    id: 'ram-4gb-ddr3-1333',
+    name: 'Kingston Value 4GB DDR3 1333MHz',
+    category: 'ram',
+    price: 12,
+    specs: { capacity: 4, speed: 1333, ddr_version: 3 },
+    scores: { coding: 3, gaming: 2, streaming: 2, vtuber: 2, multitab: 3, music: 3 },
+  },
+  {
+    id: 'ram-8gb-ddr3-1600',
+    name: 'Crucial 8GB DDR3 1600MHz',
+    category: 'ram',
+    price: 18,
+    specs: { capacity: 8, speed: 1600, ddr_version: 3 },
+    scores: { coding: 5, gaming: 4, streaming: 4, vtuber: 4, multitab: 5, music: 5 },
+  },
+  {
+    id: 'ram-16gb-ddr3-1866',
+    name: 'G.Skill Ripjaws 16GB DDR3 1866MHz',
+    category: 'ram',
+    price: 29,
+    specs: { capacity: 16, speed: 1866, ddr_version: 3 },
+    scores: { coding: 6, gaming: 5, streaming: 5, vtuber: 5, multitab: 6, music: 6 },
+  },
+  // DDR4 - Budget to Mid-Range
+  {
+    id: 'ram-4gb-ddr4-2400',
+    name: 'Patriot Signature 4GB DDR4 2400MHz',
+    category: 'ram',
+    price: 15,
+    specs: { capacity: 4, speed: 2400, ddr_version: 4 },
+    scores: { coding: 3, gaming: 3, streaming: 2, vtuber: 2, multitab: 4, music: 3 },
+  },
+  {
+    id: 'ram-8gb-ddr4-2666',
+    name: 'Crucial 8GB DDR4 2666MHz',
+    category: 'ram',
+    price: 22,
+    specs: { capacity: 8, speed: 2666, ddr_version: 4 },
+    scores: { coding: 5, gaming: 5, streaming: 4, vtuber: 4, multitab: 6, music: 5 },
+  },
+  {
+    id: 'ram-8gb-ddr4-3200',
+    name: 'Corsair Vengeance LPX 8GB DDR4 3200MHz',
+    category: 'ram',
+    price: 26,
+    specs: { capacity: 8, speed: 3200, ddr_version: 4 },
+    scores: { coding: 6, gaming: 6, streaming: 5, vtuber: 5, multitab: 6, music: 6 },
+  },
+  {
+    id: 'ram-16gb-ddr4-2666',
+    name: 'Kingston Value 16GB DDR4 2666MHz',
+    category: 'ram',
+    price: 35,
+    specs: { capacity: 16, speed: 2666, ddr_version: 4 },
+    scores: { coding: 7, gaming: 6, streaming: 6, vtuber: 6, multitab: 7, music: 7 },
+  },
+  {
+    id: 'ram-16gb-ddr4-3200',
+    name: 'Corsair Vengeance LPX 16GB DDR4 3200MHz',
+    category: 'ram',
+    price: 42,
+    specs: { capacity: 16, speed: 3200, ddr_version: 4 },
+    scores: { coding: 7, gaming: 7, streaming: 7, vtuber: 7, multitab: 8, music: 7 },
+  },
+  {
+    id: 'ram-16gb-ddr4-3600',
+    name: 'G.Skill Ripjaws V 16GB DDR4 3600MHz',
+    category: 'ram',
+    price: 49,
+    specs: { capacity: 16, speed: 3600, ddr_version: 4 },
+    scores: { coding: 8, gaming: 7, streaming: 7, vtuber: 7, multitab: 8, music: 8 },
+  },
+  {
+    id: 'ram-32gb-ddr4-3200',
+    name: 'Corsair Vengeance LPX 32GB DDR4 3200MHz',
+    category: 'ram',
+    price: 69,
+    specs: { capacity: 32, speed: 3200, ddr_version: 4 },
+    scores: { coding: 9, gaming: 8, streaming: 8, vtuber: 8, multitab: 9, music: 9 },
+  },
+  {
+    id: 'ram-32gb-ddr4-3600',
+    name: 'G.Skill Trident Z 32GB DDR4 3600MHz',
+    category: 'ram',
+    price: 84,
+    specs: { capacity: 32, speed: 3600, ddr_version: 4 },
+    scores: { coding: 9, gaming: 9, streaming: 9, vtuber: 9, multitab: 9, music: 9 },
+  },
+  {
+    id: 'ram-64gb-ddr4-3200',
+    name: 'Corsair Vengeance RGB 64GB DDR4 3200MHz',
+    category: 'ram',
+    price: 139,
+    specs: { capacity: 64, speed: 3200, ddr_version: 4 },
+    scores: { coding: 10, gaming: 9, streaming: 9, vtuber: 9, multitab: 10, music: 10 },
+  },
+  // DDR5 - Modern Performance
+  {
+    id: 'ram-8gb-ddr5-4800',
+    name: 'Crucial 8GB DDR5 4800MHz',
+    category: 'ram',
+    price: 32,
+    specs: { capacity: 8, speed: 4800, ddr_version: 5 },
+    scores: { coding: 6, gaming: 6, streaming: 5, vtuber: 5, multitab: 7, music: 6 },
+  },
+  {
+    id: 'ram-16gb-ddr5-5200',
+    name: 'Corsair Vengeance 16GB DDR5 5200MHz',
+    category: 'ram',
+    price: 52,
+    specs: { capacity: 16, speed: 5200, ddr_version: 5 },
+    scores: { coding: 8, gaming: 8, streaming: 7, vtuber: 7, multitab: 8, music: 8 },
+  },
   {
     id: 'ram-16gb-ddr5-5600',
     name: 'G.Skill Flare X5 16GB DDR5 5600MHz',
@@ -269,10 +452,118 @@ export const ramDatabase: PCPart[] = [
     specs: { capacity: 64, speed: 6000, ddr_version: 5 },
     scores: { coding: 10, gaming: 10, streaming: 10, vtuber: 10, multitab: 10, music: 10 },
   },
+  {
+    id: 'ram-128gb-ddr5-5600',
+    name: 'Kingston Fury Beast 128GB DDR5 5600MHz',
+    category: 'ram',
+    price: 449,
+    specs: { capacity: 128, speed: 5600, ddr_version: 5 },
+    scores: { coding: 10, gaming: 10, streaming: 10, vtuber: 10, multitab: 10, music: 10 },
+  },
+  {
+    id: 'ram-256gb-ddr5-5200',
+    name: 'Crucial Pro 256GB DDR5 5200MHz',
+    category: 'ram',
+    price: 849,
+    specs: { capacity: 256, speed: 5200, ddr_version: 5 },
+    scores: { coding: 10, gaming: 10, streaming: 10, vtuber: 10, multitab: 10, music: 10 },
+  },
 ];
 
-// Motherboards - 2026 Latest (AM5, LGA1700)
+// Motherboards - Budget to High-End (AM4, AM5, LGA1700, LGA1200, LGA1151)
 export const motherboardDatabase: PCPart[] = [
+  // Ultra Budget - Legacy Sockets
+  {
+    id: 'mobo-amd-a320',
+    name: 'ASRock A320M-HDV',
+    category: 'motherboard',
+    price: 49,
+    specs: { socket: 'AM4', formFactor: 'mATX', wifi: false },
+    scores: { coding: 4, gaming: 4, streaming: 4, vtuber: 4, multitab: 4, music: 4 },
+  },
+  {
+    id: 'mobo-intel-h410',
+    name: 'ASUS Prime H410M-E',
+    category: 'motherboard',
+    price: 54,
+    specs: { socket: 'LGA1200', formFactor: 'mATX', wifi: false },
+    scores: { coding: 4, gaming: 4, streaming: 4, vtuber: 4, multitab: 4, music: 4 },
+  },
+  {
+    id: 'mobo-intel-h510',
+    name: 'MSI H510M-A PRO',
+    category: 'motherboard',
+    price: 59,
+    specs: { socket: 'LGA1200', formFactor: 'mATX', wifi: false },
+    scores: { coding: 5, gaming: 5, streaming: 5, vtuber: 5, multitab: 5, music: 5 },
+  },
+  // Budget AM4
+  {
+    id: 'mobo-amd-b450',
+    name: 'MSI B450M PRO-VDH MAX',
+    category: 'motherboard',
+    price: 69,
+    specs: { socket: 'AM4', formFactor: 'mATX', wifi: false },
+    scores: { coding: 6, gaming: 6, streaming: 6, vtuber: 6, multitab: 6, music: 6 },
+  },
+  {
+    id: 'mobo-amd-b550',
+    name: 'ASUS TUF Gaming B550M-PLUS',
+    category: 'motherboard',
+    price: 94,
+    specs: { socket: 'AM4', formFactor: 'mATX', wifi: false },
+    scores: { coding: 7, gaming: 7, streaming: 7, vtuber: 7, multitab: 7, music: 7 },
+  },
+  {
+    id: 'mobo-amd-b550-wifi',
+    name: 'MSI B550 Gaming Plus WiFi',
+    category: 'motherboard',
+    price: 129,
+    specs: { socket: 'AM4', formFactor: 'ATX', wifi: true },
+    scores: { coding: 7, gaming: 8, streaming: 7, vtuber: 7, multitab: 7, music: 7 },
+  },
+  // Budget Intel LGA1700
+  {
+    id: 'mobo-intel-b660',
+    name: 'MSI PRO B660M-A',
+    category: 'motherboard',
+    price: 89,
+    specs: { socket: 'LGA1700', formFactor: 'mATX', wifi: false },
+    scores: { coding: 6, gaming: 7, streaming: 6, vtuber: 6, multitab: 6, music: 6 },
+  },
+  {
+    id: 'mobo-intel-b760',
+    name: 'ASUS Prime B760M-A',
+    category: 'motherboard',
+    price: 109,
+    specs: { socket: 'LGA1700', formFactor: 'mATX', wifi: false },
+    scores: { coding: 7, gaming: 7, streaming: 7, vtuber: 7, multitab: 7, music: 7 },
+  },
+  {
+    id: 'mobo-intel-b760-wifi',
+    name: 'MSI MAG B760M Mortar WiFi',
+    category: 'motherboard',
+    price: 149,
+    specs: { socket: 'LGA1700', formFactor: 'mATX', wifi: true },
+    scores: { coding: 8, gaming: 8, streaming: 8, vtuber: 8, multitab: 8, music: 8 },
+  },
+  // Mid-Range AM5
+  {
+    id: 'mobo-amd-a620',
+    name: 'ASRock A620M-HDV',
+    category: 'motherboard',
+    price: 79,
+    specs: { socket: 'AM5', formFactor: 'mATX', wifi: false },
+    scores: { coding: 6, gaming: 6, streaming: 6, vtuber: 6, multitab: 6, music: 6 },
+  },
+  {
+    id: 'mobo-amd-b650m',
+    name: 'MSI B650M Gaming Plus WiFi',
+    category: 'motherboard',
+    price: 149,
+    specs: { socket: 'AM5', formFactor: 'mATX', wifi: true },
+    scores: { coding: 7, gaming: 8, streaming: 7, vtuber: 7, multitab: 7, music: 7 },
+  },
   {
     id: 'mobo-amd-b650',
     name: 'ASUS TUF B650-E WiFi',
@@ -315,8 +606,51 @@ export const motherboardDatabase: PCPart[] = [
   },
 ];
 
-// PSUs - 2026 Latest
+// PSUs - Budget to Premium
 export const psuDatabase: PCPart[] = [
+  // Ultra Budget
+  {
+    id: 'psu-400w',
+    name: 'EVGA 400W Bronze',
+    category: 'psu',
+    price: 29,
+    specs: { wattage: 400, efficiency: 'Bronze' as const, modularity: 'Non' as const },
+    scores: { coding: 5, gaming: 4, streaming: 4, vtuber: 4, multitab: 5, music: 5 },
+  },
+  {
+    id: 'psu-500w',
+    name: 'Corsair CV550 500W Bronze',
+    category: 'psu',
+    price: 39,
+    specs: { wattage: 500, efficiency: 'Bronze' as const, modularity: 'Non' as const },
+    scores: { coding: 6, gaming: 5, streaming: 5, vtuber: 5, multitab: 6, music: 6 },
+  },
+  {
+    id: 'psu-550w-bronze',
+    name: 'Thermaltake Smart 550W Bronze',
+    category: 'psu',
+    price: 44,
+    specs: { wattage: 550, efficiency: 'Bronze' as const, modularity: 'Non' as const },
+    scores: { coding: 6, gaming: 6, streaming: 6, vtuber: 6, multitab: 6, music: 6 },
+  },
+  // Budget
+  {
+    id: 'psu-600w',
+    name: 'EVGA 600 BQ 600W Bronze',
+    category: 'psu',
+    price: 54,
+    specs: { wattage: 600, efficiency: 'Bronze' as const, modularity: 'Semi' as const },
+    scores: { coding: 7, gaming: 7, streaming: 7, vtuber: 7, multitab: 7, music: 7 },
+  },
+  {
+    id: 'psu-650w-bronze',
+    name: 'Corsair CX650M 650W Bronze',
+    category: 'psu',
+    price: 59,
+    specs: { wattage: 650, efficiency: 'Bronze' as const, modularity: 'Semi' as const },
+    scores: { coding: 7, gaming: 7, streaming: 7, vtuber: 7, multitab: 7, music: 7 },
+  },
+  // Mid-Range
   {
     id: 'psu-650w',
     name: 'Corsair RM750x 750W Gold',
